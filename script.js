@@ -42,3 +42,29 @@ console.log(a + Number(b));
 // 4.object: divided into object and array
 // 5. Undefined
 
+let person = document.getElementById("personName");
+let personAge = document.querySelector(".age");
+function about() {
+  person.innerHTML = "My name is Mariam.";
+  personAge.innerHTML = "I am 5years old.";
+}
+
+let c = 7;
+let f = 6;
+// condition ? true : false
+c <= 4 ? "Good" : "bad";
+console.log(c - f);
+if (c <= 4) {
+  console.log("true");
+} else {
+  console.log("false");
+}
+
+c += 5
+console.log(c);
+
+let firstName = 'Grace'
+let lastName = ' Ole'
+console.log(firstName + lastName);
+
+
