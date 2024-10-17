@@ -1,2 +1,5 @@
-let one = document.getElementById ("one")
-one.innerHTML = my name is Ade 
+// right-to-left Associativity
+
+let result = 2 ** 3;
+
+console.log(result);
