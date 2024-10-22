@@ -119,3 +119,104 @@ function pressOne() {
 function pressTwo() {
   num.value = "";
 }
+
+let books = "The god's are not to be blamed.";
+const about = `My name is Mariam. I am 5 years old.
+   I live in Osogbo. The name of my best friend is Mariam.
+    She lives in Ibadan. My name is Mariam. I am 5 years old.
+     I live in Osogbo. The name of my best friend is Mariam.
+      She lives in Ibadan.My name is Mariam. I am 5 years old. I live in Osogbo. 
+      The name of my best friend is Mariam. She lives in Ibadan.My name is Mariam. 
+      I am 5 years old. I live in Osogbo. The name of my best friend is Mariam. 
+      She lives in Ibadan.My name is Mariam. I am 5 years old. I live in Osogbo. 
+      The name of my best friend is Mariam. She lives in Ibadan.`;
+
+let girlName = " Grace";
+const phoneNumber = "08056376378899";
+console.log(girlName.at(2));
+console.log(girlName.concat(" Babalola"));
+console.log(about.includes("ball"));
+// console.log(about.replace('Mariam', 'Grace'));
+console.log(girlName.endsWith("a"));
+console.log(phoneNumber.startsWith("080"));
+console.log(girlName.trim());
+console.log(girlName.slice(-1));
+console.log(girlName.toUpperCase());
+console.log(girlName.indexOf("a"));
+console.log(about.replaceAll("Mariam", "Tolu"));
+
+let firstName = "Afeez";
+let lastName = "Olaniyi";
+
+document.getElementById("show").innerHTML = `Welcome ${firstName} ${lastName}`;
+
+let height = "12";
+console.log(Number(height));
+console.log(typeof Number(height));
+
+console.log(girlName.length);
+
+document.getElementById("demo").innerHTML = about + girlName;
+console.log(about.length);
+console.log(typeof girlName);
+
+const cars = ["Volvo", "Toyota", "Mitsubishi"];
+const car = [];
+car[0] = "Volvo";
+car[1] = "Toyota";
+car[3] = "Mitsubishi";
+console.log(cars[0]);
+console.log(typeof cars);
+const novel = [
+  "Rich dad, poor dad",
+  "Preserverance",
+  "Grit",
+  "The god's are not to be blamed",
+  "The scope of money",
+];
+console.log(novel[3]);
+console.log(novel.length);
+console.log(novel.toString());
+console.log(novel.at(2));
+console.log(novel.join("*"));
+console.log(novel.pop());
+console.log(novel.push("Grit"));
+console.log(novel.shift());
+console.log(novel.unshift("Hello"));
+console.log(novel);
+// console.log(novel.splice(0, 2));
+console.log(novel.slice(2, 4));
+// console.log(novel.indexOf('Grit'));
+const ages = [14, 6, 19, 20, 17, 23];
+const calAges = ages.filter(eligible);
+function eligible(value, index, arr) {
+  return value < 18;
+}
+console.log("CalAges here: ", calAges);
+console.log(novel.includes("Grit"));
+
+let userAge = document.querySelector(".age");
+let demo = document.getElementById("demo");
+function checkEligibilty() {
+  if (userAge.value >= 18) {
+    demo.innerHTML = "You are eligible to vote.";
+    // console.log('You are eligible to vote.');
+  } else {
+    demo.innerHTML = "You are not eligible to vote.";
+    // console.log('You are not eligible to vote');
+  }
+}
+let bmi = document.getElementById('bmi')
+let weight = document.getElementById('weight')
+let heights = document.getElementById('height')
+
+function divideUserBmi() {
+  if (weight.value == '' && heights.value == ''   )  {
+      bmi.innerHTML = "You are required to fill this space." 
+  } else if (weight.value > 0 && heights.value > 0){
+    let answer = weight.value / heights.value
+    bmi.innerHTML  = `Your BMI is ${answer.toFixed(2)}Kg/m`
+  } else {
+    bmi.innerHTML = 'Enter a valid value.'
+  }
+}
