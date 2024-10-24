@@ -231,20 +231,20 @@ let text = " ";
 // document.getElementById("demo").innerHTML = text;
 // console.log(text);
 
-let studentInfo = [
-  { name: "ade ", school: "oic", age: 12, isPresent: true, mathScore: 8 },
-  {
-    name: "Kamaldeen ",
-    school: "oic",
-    age: 14,
-    isPresent: true,
-    mathScore: 14,
-  },
-  { name: "ade ", school: "oic", age: 12, isPresent: true, mathScore: 8 },
-  { name: "Adesoji ", school: "oic", age: 5, isPresent: false, mathScore: 9 },
-  { name: "Victor ", school: "oic", age: 16, isPresent: true, mathScore: 12 },
-  { name: "Afeez ", school: "oic", age: 20, isPresent: true, mathScore: 15 },
-];
+// let studentInfo = [
+//   { name: "ade ", school: "oic", age: 12, isPresent: true, mathScore: 8 },
+//   {
+//     name: "Kamaldeen ",
+//     school: "oic",
+//     age: 14,
+//     isPresent: true,
+//     mathScore: 14,
+//   },
+//   { name: "ade ", school: "oic", age: 12, isPresent: true, mathScore: 8 },
+//   { name: "Adesoji ", school: "oic", age: 5, isPresent: false, mathScore: 9 },
+//   { name: "Victor ", school: "oic", age: 16, isPresent: true, mathScore: 12 },
+//   { name: "Afeez ", school: "oic", age: 20, isPresent: true, mathScore: 15 },
+// ];
 
 // studentInfo.map((value, index) =>{
 //    text += value.name
@@ -260,37 +260,74 @@ let studentInfo = [
 // }
 // console.log(answer);
 // document.getElementById("bmi").innerHTML = answer;
-let searchInfo = "";
-let inputData = document.getElementById("search");
-let searchResult = document.getElementById("demo");
-function search() {
-  searchInfo += studentInfo.filter((item) =>
-    item.name.includes(inputData.value)
-  );
-  searchResult.innerHTML = searchInfo;
+// let searchInfo = "";
+// let inputData = document.getElementById("search");
+// let searchResult = document.getElementById("demo");
+// function search() {
+//   searchInfo += studentInfo.filter((item) =>
+//     item.name.includes(inputData.value)
+//   );
+//   searchResult.innerHTML = searchInfo;
+// }
+
+// let digit = [4, 8, 3, 5, 2, 0];
+// let someValues = digit.every(check);
+
+// function check(value) {
+//   return value > 5;
+// }
+// console.log(someValues);
+
+// let res = digit.reduce(add);
+// function add(total, value) {
+//   return total + value;
+// }
+// console.log(res);
+
+// let a = "Funke";
+// let b = "Tola";
+// console.log(...a, ...b);
+// console.log(a);
+// // trunc is a math method that returns an integal
+// let solution = Math.trunc(Math.random() * 100);
+// // floor is a math method that is used to return the highest
+
+// console.log(solution);
+
+let form = document.getElementById("form");
+let error1 = document.getElementById("error1");
+let email = document.getElementById("email");
+let error2 = document.getElementById("error2");
+let phone = document.getElementById("phoneNumber");
+
+form.addEventListener("submit", submitForm);
+
+function submitForm(event) {
+  event.preventDefault();
+  const regex = /^((\+234)|0)?[789]\d{9}$/;
+  console.log(phone);
+  
+  if (regex.test(phone.value)) {
+    error2.innerHTML = "Good";
+  } else {
+    error2.innerHTML = "Wrong phone number";
+  }
+
+  if (email.value == "" || email.value == 0) {
+    error1.innerHTML = "This space is required.";
+  } else if (!email.value.includes("@") && email.value.includes(".")) {
+    error1.innerHTML = "Invalid email address";
+  } else {
+    error1.innerHTML = "Good 👍";
+  }
+
+  // if(phone.value == '' || phone.value == 0) {
+  //   error2.innerHTML = 'You are required to fill this space'
+  // } else if ((phone.value).length >=12 || (phone.value).length <=10){
+  //   error2.innerHTML = 'Invalid phone number'
+  // } else if(!(phone.value).startsWith('081') || (phone.value).startsWith('080')  || (phone.value).startsWith('090')) {
+  //   error2.innerHTML = 'Invalid phone number'
+  // } else {
+  //   error2.innerHTML = '✔'
+  // }
 }
-
-let digit = [4, 8, 3, 5, 2, 0];
-let someValues = digit.every(check);
-
-function check(value) {
-  return value > 5;
-}
-console.log(someValues);
-
-let res = digit.reduce(add);
-function add(total, value) {
-  return total + value;
-}
-console.log(res);
-
-let a = "Funke";
-let b = "Tola";
-console.log(...a, ...b);
-console.log(a);
-// trunc is a math method that returns an integal
-let solution = Math.trunc(Math.random() * 100);
-// floor is a math method that is used to return the highest 
- 
-
-console.log(solution);
