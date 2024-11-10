@@ -1,3 +1,5 @@
+"use strict";
+
 // let demo = document.getElementById("demo");
 // function showDate() {
 //   demo.innerHTML = new Date().getFullYear();
@@ -221,7 +223,7 @@
 //   }
 // }
 
-let text = " ";
+// let text = " ";
 // let studentId = [3, 6, 9, 2, 7, 9];
 // studentId.forEach(multiply);
 
@@ -294,40 +296,209 @@ let text = " ";
 
 // console.log(solution);
 
-let form = document.getElementById("form");
-let error1 = document.getElementById("error1");
-let email = document.getElementById("email");
-let error2 = document.getElementById("error2");
-let phone = document.getElementById("phoneNumber");
+// let form = document.getElementById("form");
+// let error1 = document.getElementById("error1");
+// let email = document.getElementById("email");
+// let error2 = document.getElementById("error2");
+// let phone = document.getElementById("phoneNumber");
 
-form.addEventListener("submit", submitForm);
+// form.addEventListener("submit", submitForm);
 
-function submitForm(event) {
-  event.preventDefault();
-  const regex = /^((\+234)|0)?[789]\d{9}$/;
-  console.log(phone);
-  
-  if (regex.test(phone.value)) {
-    error2.innerHTML = "Good";
-  } else {
-    error2.innerHTML = "Wrong phone number";
-  }
+// function submitForm(event) {
+//   event.preventDefault();
+//   const regex = /^((\+234)|0)?[789]\d{9}$/;
+//   console.log(phone);
 
-  if (email.value == "" || email.value == 0) {
-    error1.innerHTML = "This space is required.";
-  } else if (!email.value.includes("@") && email.value.includes(".")) {
-    error1.innerHTML = "Invalid email address";
-  } else {
-    error1.innerHTML = "Good 👍";
-  }
+//   if (regex.test(phone.value)) {
+//     error2.innerHTML = "Good";
+//   } else {
+//     error2.innerHTML = "Wrong phone number";
+//   }
 
-  // if(phone.value == '' || phone.value == 0) {
-  //   error2.innerHTML = 'You are required to fill this space'
-  // } else if ((phone.value).length >=12 || (phone.value).length <=10){
-  //   error2.innerHTML = 'Invalid phone number'
-  // } else if(!(phone.value).startsWith('081') || (phone.value).startsWith('080')  || (phone.value).startsWith('090')) {
-  //   error2.innerHTML = 'Invalid phone number'
-  // } else {
-  //   error2.innerHTML = '✔'
-  // }
-}
+//   if (email.value == "" || email.value == 0) {
+//     error1.innerHTML = "This space is required.";
+//   } else if (!email.value.includes("@") && email.value.includes(".")) {
+//     error1.innerHTML = "Invalid email address";
+//   } else {
+//     error1.innerHTML = "Good 👍";
+//   }
+
+// if(phone.value == '' || phone.value == 0) {
+//   error2.innerHTML = 'You are required to fill this space'
+// } else if ((phone.value).length >=12 || (phone.value).length <=10){
+//   error2.innerHTML = 'Invalid phone number'
+// } else if(!(phone.value).startsWith('081') || (phone.value).startsWith('080')  || (phone.value).startsWith('090')) {
+//   error2.innerHTML = 'Invalid phone number'
+// } else {
+//   error2.innerHTML = '✔'
+// }
+// }
+
+//  let number =0;
+
+// let text = "";
+
+// for(let i = 0;  i < 100; 	++i ){
+
+//   text += "the number is" + i + "<br>"
+
+// }
+
+// document.getElementById("list").innerHTML = text
+
+// const person = {fname:"John", lname:"Doe", age:25};
+
+// let txt = "";
+// for (let x in person) {
+//   txt += person[x] + " ";
+// }
+
+// const fruit = new Map([
+//   ["apples", 300],
+//   [ 200, "oranges"],
+//   ["pineapple", 100]
+// ])
+
+// let single = fruit.get(200);
+
+// const artist = new Map();
+
+// artist.set("burnaboy", 100);
+// artist.set("speedingthin", 600);
+// artist.set("wizkid", 700);
+
+// let single = artist.get("wizkid")
+// document.getElementById("list").innerHTML = "Artist rate" + single + "wizz"
+
+// const stringToNumber = Number("2.22");
+// console.log(stringToNumber)
+
+// const string = "5";
+// const number = +  string
+
+// const plus =  number + string
+
+// console.log(typeof number)
+
+// function changer(){
+
+// let test = document.getElementById("list").innerHTML;
+
+// document.getElementById("list").innerHTML = test.replace("google", "oichub")
+
+// }
+
+// function submit(){
+// const input = document.getElementById('testinput').value
+
+// try {
+//   if (x.trim() == "") throw "empty";
+//   if (isNaN(x)) throw "not a number";
+//   x = Number(x);
+//   if (x < 5) throw "too low";
+//   if (x > 10) throw "too high";
+// } catch (err) {
+//   message.innerHTML = "Input is " + err;
+// }
+// }
+
+// function naming() {
+//   const name = "ade"
+
+// }
+
+// console.log(name)
+
+// naming();
+
+// {
+//   const x = 2
+// }
+// console.log(x)
+
+// function wording() {
+// const word = "pablo";
+// console.log(word)
+
+// }
+// wording();
+
+// function copy(){
+//   let word = "show us way "
+//   console.log(word)
+// }
+
+// copy();
+
+// z =5
+// console.log(z)
+// console.log("new taker")
+
+// x = 5
+// var x;
+// console.log(x)
+
+// let hello = ""
+
+// hello = (ball) => "hello"+ " " + ball
+
+// console.log(hello("Man U"));
+
+// function ball(club){
+//   return "hello" + club
+// }
+
+// console.log(ball("chelsea"))
+
+// let hello = ""
+
+// hello = (a, b, c) => "hello"+ " " + a
+
+// console.log(hello( 5 * 7 + 4));
+
+// const date = new Date();
+// const getyear = date.getFullYear();
+// console.log(getyear);
+
+// let text = '{ "employees" : [' +
+// '{ "firstName":"John" , "lastName":"Doe" },' +
+// '{ "firstName":"Anna" , "lastName":"Smith" },' +
+// '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+// const obj = JSON.parse(text);
+// console.log(obj)
+
+// console.log(obj.employees[1].firstName);
+
+// const create = document.createElement("button");
+// console.log(create)
+// create.write="pabo"
+// document.write(Date());
+// const list = document.getElementById("list").innerHTML=create
+
+// console.log(text);
+
+//  localStorage.setItem("name", "John Doe")
+
+// const getItem = localStorage.getItem("name");
+
+// const removeItem = localStorage.removeItem("name")
+// console.log(removeItem);
+
+let func;
+func = (id) => {
+  const input = document.getElementById("testinput").value;
+  let names = [`${input}`];
+  names.push(id);
+
+  localStorage.setItem("name", JSON.stringify(names));
+};
+
+// var items = ["ade", 22];
+
+// function store(item_id) {
+//     items.push(item_id);
+//     localStorage.setItem("item", JSON.stringify(items));
+// }
+
+// console.log(store())
