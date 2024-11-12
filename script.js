@@ -485,14 +485,14 @@
 // const removeItem = localStorage.removeItem("name")
 // console.log(removeItem);
 
-let func;
-func = (id) => {
-  const input = document.getElementById("testinput").value;
-  let names = [`${input}`];
-  names.push(id);
+// let func;
+// func = (id) => {
+//   const input = document.getElementById("testinput").value;
+//   let names = [`${input}`];
+//   names.push(id);
 
-  localStorage.setItem("name", JSON.stringify(names));
-};
+//   localStorage.setItem("name", JSON.stringify(names));
+// };
 
 // var items = ["ade", 22];
 
@@ -502,3 +502,31 @@ func = (id) => {
 // }
 
 // console.log(store())
+
+let file = "txt.txt";
+
+fetch(file)
+  .then((x) => x.text())
+  .then((y) => (document.getElementById("list").innerHTML = y));
+
+let result = "";
+let goods = document.getElementById("showProducts");
+fetch("https://dummyjson.com/products")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    for (let i = 0; i < data.products.length; i++) {
+      result += `
+        <p>${data.products[i].brand}</p>
+        <p>${data.products[i].price}</p>
+        <img src="${data.products[i].images[0]}" alt="">
+        
+     
+    
+    
+    
+    `;
+    }
+    goods.innerHTML = result;
+    console.log("result is here: ", result);
+  });
