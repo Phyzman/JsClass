@@ -503,30 +503,52 @@
 
 // console.log(store())
 
-let file = "txt.txt";
+// let file = "txt.txt";
 
-fetch(file)
-  .then((x) => x.text())
-  .then((y) => (document.getElementById("list").innerHTML = y));
+// fetch(file)
+//   .then((x) => x.text())
+//   .then((y) => (document.getElementById("list").innerHTML = y));
 
-let result = "";
-let goods = document.getElementById("showProducts");
-fetch("https://dummyjson.com/products")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    for (let i = 0; i < data.products.length; i++) {
-      result += `
-        <p>${data.products[i].brand}</p>
-        <p>${data.products[i].price}</p>
-        <img src="${data.products[i].images[0]}" alt="">
-        
+// let result = "";
+// let goods = document.getElementById("showProducts");
+// fetch("https://dummyjson.com/products")
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//     for (let i = 0; i < data.products.length; i++) {
+//       result += `
+//         <p>${data.products[i].brand}</p>
+//         <p>${data.products[i].price}</p>
+//         <img src="${data.products[i].images[0]}" alt="">
+
      
     
     
     
-    `;
-    }
-    goods.innerHTML = result;
-    console.log("result is here: ", result);
-  });
+//     `;
+//     }
+//     goods.innerHTML = result;
+//     console.log("result is here: ", result);
+//   });
+
+let users = ''
+let tableBody = document.getElementById('tableBody')
+async function fetchProducts() {
+  const res = await fetch('https://randomuser.me/api/?results=100')
+  const data = await res.json()
+  console.log(data.results);
+  for(let m = 0; m< data.results.length; m++) {
+     users += `
+       <tr>
+          <td>${data.results[m].name.first}</td>
+          <td>${data.results[m].email}</td>
+          <td>${data.results[m].phone}</td>
+          <td>${data.results[m].location.state}</td>
+          <td><img src=${data.results[m].picture.medium} /></td>
+          <td>${data.results[m].gender}</td>
+        </tr>
+     `
+  }
+  tableBody.innerHTML = users
+}
+fetchProducts()
